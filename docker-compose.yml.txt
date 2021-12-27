@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+	windowservice:
+		image: windowserviceimage:latest
+		container_name: windowservice
+		restart: always
+		mem_limit: 10g
+		volumnes:
+			- /sourcepath:/dockerpath
+			
+networks:
+	default:
+		external:
+			name: docker_network
